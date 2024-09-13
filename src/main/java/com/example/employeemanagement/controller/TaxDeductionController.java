@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/employees")
+@RequestMapping("/v1/api/employees")
 public class TaxDeductionController {
 
     @Autowired

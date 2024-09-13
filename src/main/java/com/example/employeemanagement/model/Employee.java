@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
+@Builder
 public class Employee {
 
     @Id

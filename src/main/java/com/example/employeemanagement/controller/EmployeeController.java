@@ -15,7 +15,7 @@ import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/employees")
+@RequestMapping("/V1")
 @Validated
 public class EmployeeController {
 
@@ -23,7 +23,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
 
-    @PostMapping
+    @PostMapping("/api/employees")
     public ResponseEntity<String> saveEmployee(@Valid @RequestBody Employee employee) {
         if (employeeService.existsById(employee.getEmployeeId())) {
             return new ResponseEntity<>("Employee ID already exists", HttpStatus.BAD_REQUEST);
@@ -33,7 +33,7 @@ public class EmployeeController {
     }
 
 
-    @GetMapping
+    @GetMapping("/api/employees")
     public ResponseEntity<List<Employee>> getAllEmployee(){
         return new ResponseEntity<>(employeeService.getAllEmployees(), HttpStatus.OK);
 
