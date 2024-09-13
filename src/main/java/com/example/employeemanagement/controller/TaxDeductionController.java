@@ -8,13 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/api/employees")
+@RequestMapping("/v1")
 public class TaxDeductionController {
 
     @Autowired
     private TaxDeductionService taxDeductionService;
 
-    @GetMapping("/{employeeId}/tax-deductions")
+    @GetMapping("/api/employees/{employeeId}/tax-deductions")
     public ResponseEntity<TaxDeduction> getTaxDeductions(@PathVariable String employeeId) {
         TaxDeduction taxDeduction = taxDeductionService.calculateTaxDeduction(employeeId);
         return new ResponseEntity<>(taxDeduction, HttpStatus.OK);

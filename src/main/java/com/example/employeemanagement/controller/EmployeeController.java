@@ -15,7 +15,7 @@ import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/V1")
+@RequestMapping("/v1")
 @Validated
 public class EmployeeController {
 
